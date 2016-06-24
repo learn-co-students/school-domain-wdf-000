@@ -7,13 +7,8 @@ class School
     @roster = {}
   end
 
-
   def add_student(student, grade)
-    if @roster.length == 0
-      @roster[grade] = []
-    elsif @roster[grade] == nil
-      @roster[grade] = []
-    end
+    @roster[grade] = [] if @roster.length == 0 || @roster[grade] == nil
     @roster[grade] << student
   end
 
@@ -27,11 +22,7 @@ class School
 
   def sort
     @roster.keys.sort
-    @roster.each do |k, v|
-      v.sort!
-    end
-
-
-    
+    @roster.each {|k, v| v.sort! }
   end
+
 end
