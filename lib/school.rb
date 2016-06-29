@@ -23,7 +23,6 @@ class School
     @roster.fetch(grade)
   end
 
-  # TODO: #sort - sorts students alphabetically
   def sort
       @roster.each do |grade, students|
         students.sort!
