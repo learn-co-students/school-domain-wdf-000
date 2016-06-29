@@ -17,10 +17,14 @@ class School
       @roster[grade] = []
       @roster[grade] << student_name
     end
+
+    #using the conditional operator makes it much cleaner
+    # roster[grade] ||= []
+    # roster[grade] << student_name
   end
 
   def grade(grade)
-    @roster.fetch(grade)
+    @roster[grade]
   end
 
   def sort
