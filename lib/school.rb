@@ -11,9 +11,7 @@ class School
   end
   
    def add_student(student_name, grade)
-     if !@roster[grade]
-      @roster[grade] = []
-     end
+     @roster[grade] ||= []
      @roster[grade] << student_name
    end
 
@@ -22,8 +20,10 @@ class School
    end
 
    def sort
+    sorted = {}
      @roster.each do |grade, students|
-      students.sort!
+      sorted[grade] = students.sort
      end
+    sorted
    end
 end
