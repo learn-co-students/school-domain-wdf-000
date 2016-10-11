@@ -1,10 +1,9 @@
-# code here!
 class School
 attr_accessor :name, :roster
 
 
-	def initialize(school_name)
-		@name = school_name
+	def initialize(name)
+		@name = name
 		@roster = {}
 	end
 
@@ -24,10 +23,18 @@ attr_accessor :name, :roster
 	    sorted = {}
 	    @roster.sort.each do |grade, name_array|
 		sorted[grade] = name_array.sort
-	end
-	    sorted
-	    
+		end
+	    sorted   
 	end
 end
 
+#another way
+
+	# def sort
+	# 	@roster.each do |grade, students|
+	# 		@roster[grade] = students.sort
+	# 	end
+	# 	@roster
+	# 	end
+	# end
 
